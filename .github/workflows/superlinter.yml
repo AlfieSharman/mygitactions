@@ -1,0 +1,17 @@
+name: Super-Linter
+
+on: push
+
+jobs:
+	super-linter:
+		name: Linter code base
+		runes on: ubuntu-latest
+		steps:
+			- name: Checkout code
+			- uses: actions/checkout@v2
+
+			- name: Run Super-Alfie
+			- uses: githuber/super-linter@v3
+			env:
+				DEFAULT BRANCH: main
+				GITHUB_Token: ${{ secrets.GITHUB_TOKEN }}
